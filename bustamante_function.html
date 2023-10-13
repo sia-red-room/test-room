@@ -1,0 +1,50 @@
+Name: Clyde Bustamante BSIT 4A Xamarin
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var itemcode = [];	
+        var description = [];
+        var price = [];
+        var quantity = [];
+        var subtotal = [];
+        
+        while (itemcode.length < 10) {
+            addItem();
+        }
+
+        function addItem() {
+            var code = prompt("Enter Item Code:");
+            var desc = prompt("Enter Description:");
+            var itemPrice = parseFloat(prompt("Enter Price:"));
+            var itemQuantity = parseInt(prompt("Enter Quantity:"));
+
+            var i = itemcode.length;
+
+            itemcode[i] = code;
+            description[i] = desc;
+            price[i] = itemPrice;
+            quantity[i] = itemQuantity;
+            subtotal[i] = itemPrice * itemQuantity;
+        }
+
+        function displayItems() {
+            var total = 0;
+
+            for (var i = 0; i < itemcode.length; i++) {
+                document.write("<p>" + "Item Code: " + itemcode[i] + " , Description: " + description[i] + " , Price: " + price[i] + " , Quantity: " + quantity[i] + " , Subtotal: " + subtotal[i] + "<p/>");
+                total += subtotal[i];
+            }
+
+            
+            document.write("Total Subtotal: " + total);
+        }
+
+        displayItems();
+    </script>
+</body>
+</html>
